@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/test_photo1.jfif"),
+            image: AssetImage("flutter_assets/assets/test_photo1.jfif"),
             fit: BoxFit.cover,
           ),
         ),
