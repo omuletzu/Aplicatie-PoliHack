@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:polihack2024/submenu.dart';
+import 'package:polihack2024/submenu_car.dart';
+import 'package:polihack2024/submenu_tech.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,26 +15,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('OmniLearn'),
+          title: const Text('SkillBoost'),
           centerTitle: true,
           titleTextStyle: GoogleFonts.comicNeue(
-            textStyle: const TextStyle(color: Color.fromRGBO(69, 146, 197, 1), fontSize: 30.0), // Modify text color here
+            textStyle: const TextStyle(color: Color.fromRGBO(69, 146, 197, 1), fontSize: 30.0),
           ),
           backgroundColor: const Color.fromRGBO(240, 241, 246, 1),
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
-                icon: const Icon(Icons.menu, color: Colors.black45,), // Hamburger menu icon
+                icon: const Icon(Icons.menu, color: Colors.black45,),
                 onPressed: () {
-                  Scaffold.of(context).openDrawer(); // Open drawer when icon is pressed
+                  Scaffold.of(context).openDrawer();
                 },
               );
             },
           ),
         ),
-
         drawer: Drawer(
-          // Define your drawer contents here
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
@@ -42,17 +43,25 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: const Text('Home', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
-                textColor: const Color.fromRGBO(0, 0, 0, 1),
+                title: const Text('Acasa', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+                textColor: Colors.black54,
                 titleTextStyle: GoogleFonts.openSans(),
                 leading: const Icon(Icons.house_outlined, color: Colors.black45),
                 onTap: () {
-                  // Add your onTap logic here
+
+                  Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                          const MenuPageHome(),
+                        ),
+                      );
                 },
+
               ),
               ListTile(
-                title: const Text('Settings', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
-                textColor: const Color.fromRGBO(0, 0, 0, 1),
+                title: const Text('Setari', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+                textColor: Colors.black54,
                 titleTextStyle: GoogleFonts.openSans(),
                 leading: const Icon(Icons.settings, color: Colors.black45),
                 onTap: () {
@@ -61,7 +70,7 @@ class MyApp extends StatelessWidget {
               ),
               ListTile(
                 title: const Text('Log out', style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
-                textColor: const Color.fromRGBO(0, 0, 0, 1),
+                textColor: Colors.black54,
                 titleTextStyle: GoogleFonts.openSans(),
                 leading: const Icon(Icons.logout, color: Colors.black45),
                 onTap: () {
@@ -71,27 +80,32 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
+        body: Column(
+          children: [
+            Expanded(
 
-          body: Column(
-            children: [
-              Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
 
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-
-                    Expanded(
-                      child: Material(
-                        child: Container(
-                          color: const Color.fromRGBO(240, 241, 246, 1),
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: ElevatedButton(
+                  Expanded(
+                    child: Material(
+                      child: Container(
+                        color: const Color.fromRGBO(240, 241, 246, 1),
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Builder(
+                              builder: (context) => ElevatedButton(
                                 onPressed: () {
-                                  // Add onPressed logic
+
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const MenuPageHome()),
+                                  );
+
                                 },
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(double.infinity, double.infinity),
@@ -128,12 +142,12 @@ class MyApp extends StatelessWidget {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Home',
+                                              'Casa',
                                               style: TextStyle(fontSize: 25.0, color: Colors.white),
                                             ),
                                             SizedBox(height: 4),
                                             Text(
-                                              'This is the description of the home',
+                                              'Ajutorul tau pentru casa',
                                               style: TextStyle(fontSize: 16.0, color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -149,19 +163,27 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ),
 
-                    Expanded(
-                      child: Material(
-                        child: Container(
-                          color: const Color.fromRGBO(240, 241, 246, 1),
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: ElevatedButton(
+
+                  Expanded(
+                    child: Material(
+                      child: Container(
+                        color: const Color.fromRGBO(240, 241, 246, 1),
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Builder(
+                              builder: (context) => ElevatedButton(
                                 onPressed: () {
-                                  // Add onPressed logic
+
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const MenuPageCar()),
+                                  );
+
                                 },
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(double.infinity, double.infinity),
@@ -198,12 +220,12 @@ class MyApp extends StatelessWidget {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Car',
+                                              'Masina',
                                               style: TextStyle(fontSize: 25.0, color: Colors.white),
                                             ),
                                             SizedBox(height: 4),
                                             Text(
-                                              'This is the description of the home',
+                                              'Rezolva-ti problemele masinii',
                                               style: TextStyle(fontSize: 16.0, color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -219,19 +241,26 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ),
 
-                    Expanded(
-                      child: Material(
-                        child: Container(
-                          color: const Color.fromRGBO(240, 241, 246, 1),
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: ElevatedButton(
+                  Expanded(
+                    child: Material(
+                      child: Container(
+                        color: const Color.fromRGBO(240, 241, 246, 1),
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Builder(
+                              builder: (context) => ElevatedButton(
                                 onPressed: () {
-                                  // Add onPressed logic
+
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const MenuPageTech()),
+                                  );
+
                                 },
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(double.infinity, double.infinity),
@@ -268,12 +297,12 @@ class MyApp extends StatelessWidget {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Technology',
+                                              'Tehnologie',
                                               style: TextStyle(fontSize: 25.0, color: Colors.white),
                                             ),
                                             SizedBox(height: 4),
                                             Text(
-                                              'This is the description of the home',
+                                              'Ghidul tau pentru tehnologie',
                                               style: TextStyle(fontSize: 16.0, color: Colors.white),
                                               textAlign: TextAlign.center,
                                             ),
@@ -289,11 +318,12 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
+        ),
       ),
     );
   }
