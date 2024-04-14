@@ -1,4 +1,5 @@
 import 'package:aplicatie_polihack_v15/Tutorials/tutorial.dart';
+import 'package:aplicatie_polihack_v15/search_spec.dart';
 import 'package:aplicatie_polihack_v15/subcategorii.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -62,15 +63,29 @@ class _MenuPageState extends State<MenuPageTech> {
               },
             ),
             ListTile(
-              title: const Text('Setari',
+              title: const Text('Lista specialisti',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
               titleTextStyle: GoogleFonts.openSans(),
               leading: const Icon(Icons.settings, color: Colors.black45),
               onTap: () {
-                // Add your onTap logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SearchSpec(),
+                  ),
+                );
               },
+            ),
+            ListTile(
+              title: const Text('Setari',
+                  style:
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+              textColor: Colors.black54,
+              titleTextStyle: GoogleFonts.openSans(),
+              leading: const Icon(Icons.settings, color: Colors.black45),
+              onTap: () {},
             ),
             ListTile(
               title: const Text('Log out',
@@ -79,9 +94,7 @@ class _MenuPageState extends State<MenuPageTech> {
               textColor: Colors.black54,
               titleTextStyle: GoogleFonts.openSans(),
               leading: const Icon(Icons.logout, color: Colors.black45),
-              onTap: () {
-                // Add your onTap logic here
-              },
+              onTap: () {},
             ),
           ],
         ),

@@ -47,7 +47,7 @@ class _SignUpPageState extends State<SignUpPage> {
           },
         ),
         title: Text(
-          "Take Me Home",
+          "SkillBoost",
           style: GoogleFonts.openSans(
             textStyle: const TextStyle(
               color: Colors.black,

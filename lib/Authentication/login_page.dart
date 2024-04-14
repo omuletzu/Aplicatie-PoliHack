@@ -164,34 +164,41 @@ class _LoginPageState extends State<LoginPage> {
     String password = _passwordController.text;
 
     User? user = await _auth.signInWithEmailAndPassword(email, password);
+    User? provider = await _auth.signInWithEmailAndPassword(email, password);
 
     setState(() {
       isSigningIn = false;
     });
 
     if (user != null) {
-      showToast(message: "User successfully signed in");
+      showToast(message: "Successfully signed in");
 
-      //extragem informatii pe baza uid
-      DocumentSnapshot userDoc = await FirebaseFirestore.instance
-          .collection('users')
-          .doc(user.uid)
-          .get();
-      if (userDoc.exists) {
-        // daca documentul utilizatorului exista atunci extragem informatii
-        String name = userDoc.get('name');
-        String userEmail = userDoc.get('email');
+      if (provider != null) {
+        showToast(message: "Successfully signed in");
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const LoadingScreen()),
-        );
+        //extragem informatii pe baza uid
+        DocumentSnapshot providerDoc = await FirebaseFirestore.instance
+            .collection('providers')
+            .doc(provider.uid)
+            .get();
+        DocumentSnapshot userDoc = await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .get();
+        if (userDoc.exists || providerDoc.exists) {
+          // daca documentul utilizatorului exista atunci extragem informatii
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const LoadingScreen()),
+          );
+        } else {
+          // documentul utilizatorului nu exista in baza de date
+          showToast(message: "User data not found");
+        }
       } else {
-        // documentul utilizatorului nu exista in baza de date
-        showToast(message: "User data not found");
+        showToast(message: "Some error occurred");
       }
-    } else {
-      showToast(message: "Some error occurred");
     }
   }
 }

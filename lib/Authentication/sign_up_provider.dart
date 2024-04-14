@@ -7,6 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignUpProvider extends StatefulWidget {
@@ -21,6 +22,7 @@ class _SignUpProviderState extends State<SignUpProvider> {
   bool isSigningUp = false;
   TextEditingController _nameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
+  TextEditingController _occupationController = TextEditingController();
   TextEditingController _phoneController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -30,6 +32,7 @@ class _SignUpProviderState extends State<SignUpProvider> {
     _emailController.dispose();
     _passwordController.dispose();
     _phoneController.dispose();
+    _occupationController.dispose();
     super.dispose();
   }
 
@@ -49,7 +52,7 @@ class _SignUpProviderState extends State<SignUpProvider> {
           },
         ),
         title: Text(
-          "App Name",
+          "SkillBoost",
           style: GoogleFonts.openSans(
             textStyle: const TextStyle(
               color: Colors.black,
@@ -86,6 +89,14 @@ class _SignUpProviderState extends State<SignUpProvider> {
             FormContainerWidget(
               controller: _emailController,
               hintText: "Email",
+              isPasswordField: false,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            FormContainerWidget(
+              controller: _occupationController,
+              hintText: "Your occupation",
               isPasswordField: false,
             ),
             const SizedBox(
@@ -186,6 +197,7 @@ class _SignUpProviderState extends State<SignUpProvider> {
     String email = _emailController.text;
     String password = _passwordController.text;
     String phoneNumber = _phoneController.text;
+    String occupation = _occupationController.text;
     email = email.replaceAll(" ", "");
 
     // Sign up the user with email and password
@@ -199,6 +211,7 @@ class _SignUpProviderState extends State<SignUpProvider> {
           .set({
         'name': name,
         'email': email,
+        'occupation': occupation,
         'phone number': phoneNumber,
       });
 

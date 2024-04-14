@@ -1,6 +1,7 @@
 import 'package:aplicatie_polihack_v15/Tutorials/tutorial.dart';
 import 'package:aplicatie_polihack_v15/global/common/toast.dart';
 import 'package:aplicatie_polihack_v15/loading_screen.dart';
+import 'package:aplicatie_polihack_v15/search_spec.dart';
 import 'package:aplicatie_polihack_v15/subcategorii.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +63,22 @@ class _MenuPageState extends State<MenuPageHome> {
               leading: const Icon(Icons.house_outlined, color: Colors.black45),
               onTap: () {
                 Navigator.of(context).popUntil((route) => route.isFirst);
+              },
+            ),
+            ListTile(
+              title: const Text('Lista specialisti',
+                  style:
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+              textColor: Colors.black54,
+              titleTextStyle: GoogleFonts.openSans(),
+              leading: const Icon(Icons.settings, color: Colors.black45),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SearchSpec(),
+                  ),
+                );
               },
             ),
             ListTile(
