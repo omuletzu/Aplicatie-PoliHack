@@ -55,6 +55,61 @@ class _SearchSpecState extends State<SearchSpec> {
             },
           ),
         ),
+        drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              child: Text(''),
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(240, 241, 246, 1),
+              ),
+            ),
+            ListTile(
+              title: const Text('Acasa',
+                  style:
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+              textColor: Colors.black54,
+              titleTextStyle: GoogleFonts.openSans(),
+              leading: const Icon(Icons.house_outlined, color: Colors.black45),
+              onTap: () {
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              },
+            ),
+            ListTile(
+              title: const Text('Lista specialisti',
+                  style:
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+                        textColor: Colors.black54,
+                        titleTextStyle: GoogleFonts.openSans(),
+                        leading: const Icon(Icons.settings, color: Colors.black45),
+                        onTap: () {},
+            ),
+            ListTile(
+              title: const Text('Setari',
+                  style:
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+              textColor: Colors.black54,
+              titleTextStyle: GoogleFonts.openSans(),
+              leading: const Icon(Icons.settings, color: Colors.black45),
+              onTap: () {
+                
+              },
+            ),
+            ListTile(
+              title: const Text('Log out',
+                  style:
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+              textColor: Colors.black54,
+              titleTextStyle: GoogleFonts.openSans(),
+              leading: const Icon(Icons.logout, color: Colors.black45),
+              onTap: () {
+                
+              },
+            ),
+          ],
+        ),
+      ),
         body: FutureBuilder<List<Person>>(
           future: _peopleFuture,
           builder: (context, snapshot) {
@@ -86,11 +141,7 @@ class _SearchSpecState extends State<SearchSpec> {
                           Text('Occupation: ${people[index].occupation}'),
                         ],
                       ),
-                      onTap: () {
-                        // showDialog(context: context, builder: (BuildContext (context) {
-                        //   return AlertDialog(title: Text('caca'));
-                        // }));
-                      },
+                      onTap: () {},
                     ),
                   );
                 },

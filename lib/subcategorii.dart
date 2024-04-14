@@ -79,7 +79,7 @@ class _MenuPageState extends State<AbstractCat> {
               titleTextStyle: GoogleFonts.openSans(),
               leading: const Icon(Icons.settings, color: Colors.black45),
               onTap: () {
-                // Add your onTap logic here
+                
               },
             ),
             ListTile(
@@ -159,7 +159,6 @@ class Language extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     String cardText = 'card';
-    IconData? category_icon;
 
     cardText = title[index];
 
