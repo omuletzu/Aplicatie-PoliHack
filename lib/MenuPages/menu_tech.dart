@@ -52,7 +52,7 @@ class _MenuPageState extends State<MenuPageTech> {
               ),
             ),
             ListTile(
-              title: const Text('Acasa',
+              title: const Text('Home',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
@@ -63,7 +63,7 @@ class _MenuPageState extends State<MenuPageTech> {
               },
             ),
             ListTile(
-              title: const Text('Lista specialisti',
+              title: const Text('Handyman list',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
@@ -81,7 +81,7 @@ class _MenuPageState extends State<MenuPageTech> {
               },
             ),
             ListTile(
-              title: const Text('Setari',
+              title: const Text('Settings',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
@@ -161,28 +161,24 @@ class Language extends StatelessWidget {
 
     switch (index) {
       case 0:
-        cardText = 'Instalatii electrice';
-        category_icon = Icons.electric_bolt;
+        cardText = 'Internet safety';
+        category_icon = Icons.safety_check;
         break;
       case 1:
-        cardText = 'Instalatii sanitare';
+        cardText = 'Computer basics';
         category_icon = Icons.plumbing;
         break;
       case 2:
-        cardText = 'Gradinarit';
+        cardText = 'Programming';
         category_icon = FontAwesomeIcons.plantWilt;
         break;
       case 3:
-        cardText = 'Gatit';
+        cardText = 'Hardware and networks';
         category_icon = FontAwesomeIcons.bowlFood;
         break;
       case 4:
-        cardText = 'Curatenie';
+        cardText = 'Digital media';
         category_icon = Icons.clean_hands;
-        break;
-      case 5:
-        cardText = 'Reparatii casnice';
-        category_icon = FontAwesomeIcons.wrench;
         break;
     }
     return GestureDetector(

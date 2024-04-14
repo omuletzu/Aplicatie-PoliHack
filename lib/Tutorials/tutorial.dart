@@ -41,7 +41,7 @@ class _TutorialPrizaState extends State<TutorialPriza> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Schimba priza', style: GoogleFonts.openSans()),
+        title: Text('Socket replacement', style: GoogleFonts.openSans()),
         titleTextStyle: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800),
         foregroundColor: Color.fromRGBO(240, 241, 246, 1),
         centerTitle: true,
@@ -113,7 +113,7 @@ class _TutorialPrizaState extends State<TutorialPriza> {
             Padding(
               padding: const EdgeInsets.only(left: 16.0, right: 16.0),
               child: Text(
-                'Pasi:',
+                'Steps:',
                 textAlign: TextAlign.start,
                 style: GoogleFonts.openSans(
                   textStyle: const TextStyle(
@@ -131,24 +131,19 @@ class _TutorialPrizaState extends State<TutorialPriza> {
                 children: [
                   TutorialStep(
                     stepNumber: 1,
-                    description: 'Opreşte curentul în casă. Introdu vârful şurubelniţei-tester în ambele orificii ale prizei, ţinând un deget pe contactul metalic din capătul mânerului.Rezistenţa din interiorul testerului trebuie să fie stinsă. Desfă şuruburile prizei vechi şi îndepărtează capacul.',
-                  ),
+                    description: 'Turn off the power in the house. Insert the tip of the tester screwdriver into both holes of the socket, keeping a finger on the metal contact at the end of the handle. The resistance inside the tester must be off. Unscrew the old socket and remove the cover.'),
                   TutorialStep(
                     stepNumber: 2,
-                    description: 'Corpul prizei are pe laterale două şuruburi care trebuie şi ele desfăcute. Când priza se poate scoate din perete, apuc-o de părţile ceramice.În partea din spatele ei se află două orificii în care intră cele două fire metalice.Acestea sunt prinse în priză cu două şurubele. Slăbeşte-le pentru a le scoate şi a te uita la ele.',
-                  ),
+                    description: 'The body of the socket has two screws on the sides that also need to be unscrewed. When the socket can be removed from the wall, grab it by the ceramic parts. At the back of it, there are two holes where the two metallic wires go in. These are held in the socket by two screws. Loosen them to remove them and take a look at them'),
                   TutorialStep(
                     stepNumber: 3,
-                    description: 'Dacă izolaţia din plastic este casantă sau înnegrită, tai-o cu un cuţit atât cât este nevoie.Apoi, îndepărtează din nou izolaţia pe o porţiune de câţiva milimetri. Introdu capetele metalice în orificiile din spatele noii prize şi strânge din nou şuruburile până când firele stau fixe.',
-                  ),
+                    description: 'If the plastic insulation is brittle or blackened, cut it with a knife as much as needed. Then, remove the insulation again on a few millimeters portion. Insert the metallic ends into the holes at the back of the new socket and tighten the screws again until the wires are fixed'),
                   TutorialStep(
                     stepNumber: 4,
-                    description: 'Introdu priza înapoi în perete, iar apoi strânge şuruburile laterale. Pune capacul şi strânge-i şuruburile.',
-                  ),
+                    description: 'Insert the socket back into the wall, then tighten the side screws. Put the cover on and tighten its screws'),
                   TutorialStep(
                     stepNumber: 5,
-                    description: 'Ai grija cand montezi o priza ca trebui sa ai in vedere si puterea ceruta de aparatele ce urmeaza sa le conectezi la aceasta. Priza, inainte de toate, presupune conectarea la sursa de energie electrica a aparate...mai mare, va trebui sa tii seama de capacitatea ei, dar si de materialul din care e facuta.',
-                  ),
+                    description: 'Be careful when installing a socket as you need to consider the power required by the devices that you will connect to it. The socket, first of all, involves connecting to the source of electrical energy of the devices... larger, you will have to take into account its capacity, but also the material it is made of'),
                 ],
               ),
             ),
@@ -176,7 +171,7 @@ class _TutorialPrizaState extends State<TutorialPriza> {
                   ),
                 ),
                 child: Text(
-                  'Cere ajutorul unui specialist',
+                  'Ask for help',
                   style: GoogleFonts.openSans(
                     textStyle: TextStyle(
                       fontSize: 18,
