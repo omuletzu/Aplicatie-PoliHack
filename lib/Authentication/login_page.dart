@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
             },
           ),
           title: Text(
-            "Take Me Home",
+            "SkillBoost",
             style: GoogleFonts.openSans(
               textStyle: const TextStyle(
                 color: Colors.black,

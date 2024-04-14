@@ -51,7 +51,7 @@ class _MenuPageState extends State<MenuPageCar> {
               ),
             ),
             ListTile(
-              title: const Text('Acasa',
+              title: const Text('Home',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
@@ -62,7 +62,7 @@ class _MenuPageState extends State<MenuPageCar> {
               },
             ),
             ListTile(
-              title: const Text('Lista specialisti',
+              title: const Text('Hnadyman list',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
@@ -78,7 +78,7 @@ class _MenuPageState extends State<MenuPageCar> {
               },
             ),
             ListTile(
-              title: const Text('Setari',
+              title: const Text('Settings',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
@@ -98,10 +98,18 @@ class _MenuPageState extends State<MenuPageCar> {
           ],
         ),
       ),
-      body: const Stack(
+      body: Stack(
         children: [
           ScrollPage(),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: Icon(Icons.arrow_back),
+        backgroundColor: Colors.white.withOpacity(0.6),
       ),
     );
   }
@@ -148,23 +156,23 @@ class Language extends StatelessWidget {
 
     switch (index) {
       case 0:
-        cardText = 'Intretinere';
+        cardText = 'Maintenance';
         category_icon = Icons.check;
         break;
       case 1:
-        cardText = 'Reparatii';
+        cardText = 'Repairs';
         category_icon = FontAwesomeIcons.wrench;
         break;
       case 2:
-        cardText = 'Siguranta';
+        cardText = 'Safety';
         category_icon = Icons.health_and_safety;
         break;
       case 3:
-        cardText = 'Curatenie';
+        cardText = 'Cleaning';
         category_icon = FontAwesomeIcons.broom;
         break;
       case 4:
-        cardText = 'Navigare';
+        cardText = 'Navigation';
         category_icon = Icons.map;
         break;
     }
@@ -173,9 +181,9 @@ class Language extends StatelessWidget {
         switch (index) {
           case 0:
             List<String> title = [
-              'Schimbare ulei',
-              'Verificare presiune anvelope',
-              'Inlocuire filtre aer'
+              'Oil change',
+              'Tire pressure check',
+              'Replacement of air filters'
             ];
             List<Widget> pageToPush = [TutorialPriza()];
 
@@ -190,7 +198,7 @@ class Language extends StatelessWidget {
             break;
 
           case 1:
-            List<String> title = ['Schimbare roti', 'Inlocuire baterie'];
+            List<String> title = ['Tire change', 'Battery replacement'];
             List<Widget> pageToPush = [TutorialPriza()];
 
             Navigator.push(
@@ -205,9 +213,9 @@ class Language extends StatelessWidget {
 
           case 2:
             List<String> title = [
-              'Folosire centuri de siguranta',
-              'Instalare scaun copil',
-              'Conducere in conditii de iarna'
+              'Use of safety belts',
+              'Child seat installation',
+              'Driving in winter conditions'
             ];
             List<Widget> pageToPush = [TutorialPriza()];
 
@@ -223,9 +231,9 @@ class Language extends StatelessWidget {
 
           case 3:
             List<String> title = [
-              'Curatare interior masina',
-              'Spalare masina',
-              'Curatare faruri'
+              'Car interior cleaning',
+              'Car wash',
+              'Headlight cleaning'
             ];
             List<Widget> pageToPush = [TutorialPriza()];
 
@@ -241,9 +249,9 @@ class Language extends StatelessWidget {
 
           case 4:
             List<String> title = [
-              'Folosire GPS',
-              'Citire harta rutiera',
-              'Planificare traseu'
+              'GPS usage',
+              'Reading the road map',
+              'Route planning'
             ];
             List<Widget> pageToPush = [TutorialPriza()];
 

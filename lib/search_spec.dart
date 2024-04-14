@@ -1,6 +1,3 @@
-import 'package:aplicatie_polihack_v15/global/common/toast.dart';
-import 'package:aplicatie_polihack_v15/loading_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -109,9 +106,7 @@ class _SearchSpecState extends State<SearchSpec> {
                 textColor: Colors.black54,
                 titleTextStyle: GoogleFonts.openSans(),
                 leading: const Icon(Icons.logout, color: Colors.black45),
-                onTap: () {
-                  _signOut(context);
-                },
+                onTap: () {},
               ),
             ],
           ),
@@ -155,6 +150,12 @@ class _SearchSpecState extends State<SearchSpec> {
             }
           },
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.arrow_back)),
       ),
     );
   }
@@ -178,15 +179,5 @@ class _SearchSpecState extends State<SearchSpec> {
     } catch (e) {}
 
     return persons;
-  }
-
-  Future<void> _signOut(BuildContext context) async {
-    await FirebaseAuth.instance.signOut();
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (context) => LoadingScreen()),
-      (route) => false,
-    );
-    showToast(message: "Successfully Signed Out");
   }
 }

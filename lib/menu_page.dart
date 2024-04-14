@@ -46,7 +46,7 @@ class BigMenu extends StatelessWidget {
                 ),
               ),
               ListTile(
-                title: const Text('Acasa',
+                title: const Text('Home',
                     style:
                         TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
                 textColor: Colors.black54,
@@ -63,7 +63,7 @@ class BigMenu extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: const Text('Setari',
+                title: const Text('Settings',
                     style:
                         TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
                 textColor: Colors.black54,
@@ -151,14 +151,14 @@ class BigMenu extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Casa',
+                                              'House',
                                               style: TextStyle(
                                                   fontSize: 25.0,
                                                   color: Colors.white),
                                             ),
                                             SizedBox(height: 4),
                                             Text(
-                                              'Ajutorul tau pentru casa',
+                                              'Your guide to household tasks',
                                               style: TextStyle(
                                                   fontSize: 16.0,
                                                   color: Colors.white),
@@ -235,14 +235,14 @@ class BigMenu extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Masina',
+                                              'Car',
                                               style: TextStyle(
                                                   fontSize: 25.0,
                                                   color: Colors.white),
                                             ),
                                             SizedBox(height: 4),
                                             Text(
-                                              'Rezolva-ti problemele masinii',
+                                              'Your guide to car maintenance',
                                               style: TextStyle(
                                                   fontSize: 16.0,
                                                   color: Colors.white),
@@ -319,14 +319,14 @@ class BigMenu extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Tehnologie',
+                                              'Technology',
                                               style: TextStyle(
                                                   fontSize: 25.0,
                                                   color: Colors.white),
                                             ),
                                             SizedBox(height: 4),
                                             Text(
-                                              'Ghidul tau pentru tehnologie',
+                                              'Your guide to technology',
                                               style: TextStyle(
                                                   fontSize: 16.0,
                                                   color: Colors.white),

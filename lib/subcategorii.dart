@@ -1,3 +1,4 @@
+import 'package:aplicatie_polihack_v15/search_spec.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,7 +62,7 @@ class _MenuPageState extends State<AbstractCat> {
               ),
             ),
             ListTile(
-              title: const Text('Acasa',
+              title: const Text('Home',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
@@ -72,15 +73,29 @@ class _MenuPageState extends State<AbstractCat> {
               },
             ),
             ListTile(
-              title: const Text('Setari',
+              title: const Text('Hnadyman list',
                   style:
                       TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
               textColor: Colors.black54,
               titleTextStyle: GoogleFonts.openSans(),
               leading: const Icon(Icons.settings, color: Colors.black45),
               onTap: () {
-                // Add your onTap logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SearchSpec(),
+                  ),
+                );
               },
+            ),
+            ListTile(
+              title: const Text('Settings',
+                  style:
+                      TextStyle(fontSize: 25.0, fontWeight: FontWeight.w800)),
+              textColor: Colors.black54,
+              titleTextStyle: GoogleFonts.openSans(),
+              leading: const Icon(Icons.settings, color: Colors.black45),
+              onTap: () {},
             ),
             ListTile(
               title: const Text('Log out',
@@ -98,6 +113,14 @@ class _MenuPageState extends State<AbstractCat> {
         children: [
           ScrollPage(title: title, pageToPush: pageToPush),
         ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: Icon(Icons.arrow_back),
+        backgroundColor: Colors.white.withOpacity(0.6),
       ),
     );
   }
@@ -159,7 +182,6 @@ class Language extends StatelessWidget {
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     String cardText = 'card';
-    IconData? category_icon;
 
     cardText = title[index];
 
